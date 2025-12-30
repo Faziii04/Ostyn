@@ -1,0 +1,9 @@
+# Dependency folders
+node_modules/
+
+# Local environment variables (Contains your Supabase URL)
+.env
+
+# Logs and system files
+npm-debug.log*
+.DS_Store
