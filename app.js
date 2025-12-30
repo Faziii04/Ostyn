@@ -15,9 +15,15 @@ app.get('/', (req, res) => {
     res.send("Esta es la raiz del nuevo server que estamos creando")
 })
 
-app.listen(3000, async () => {
-  console.log('Server is running on port 3000');
+// Use the port Render gives you, or 3000 locally
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, async () => {
+  console.log(`Server is running on port ${PORT}`);
   console.log('Checking database connection...');
-  console.log('Database connection: ' + await dbService.isConnected())
+  
+  // Checking the connection at startup
+  const isConnected = await dbService.isConnected();
+  console.log('Database connection: ' + isConnected);
 });
 
