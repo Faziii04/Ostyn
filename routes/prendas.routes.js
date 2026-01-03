@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { PrendasController } from "../controllers/prenda.controller";
+import { PrendasController } from "../controllers/prenda.controller.js";
 
 export const prendaRouter = Router();
 
