@@ -1,6 +1,6 @@
 import express from 'express';
 import 'dotenv/config';
-import { userRouter } from './routes/user.routes.js';
+import { userRouter } from './routes/users.routes.js';
 import { authRouter } from './routes/auth.routes.js';
 import { healthRouter } from './routes/health.routes.js';
 import { DatabaseService } from './services/database.service.js';
