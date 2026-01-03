@@ -25,5 +25,6 @@ app.listen(PORT, async () => {
   // Checking the connection at startup
   const isConnected = await dbService.isConnected();
   console.log('Database connection: ' + isConnected);
+  console.log("Todo anda bien")
 });
 
