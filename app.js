@@ -1,12 +1,14 @@
 import express from 'express';
 import 'dotenv/config';
-import { userRouter } from './routes/users.routes.js';
-import { authRouter } from './routes/auth.routes.js';
-import { healthRouter } from './routes/health.routes.js';
-import { prendaRouter } from './routes/prendas.routes.js';
-import { DatabaseService } from './services/database.service.js';
+import { userRouter } from './src/routes/users.routes.js';
+import { authRouter } from './src/routes/auth.routes.js';
+import { healthRouter } from './src/routes/health.routes.js';
+import { prendaRouter } from './src/routes/prendas.routes.js';
+import { DatabaseService } from './src/services/database.service.js';
 
 const app = express();
+app.use(express.json());
+
 const dbService = new DatabaseService();
 
 app.use('/api/v1/users', userRouter);
@@ -22,6 +24,7 @@ const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, async () => {
   console.log(`Server is running on port ${PORT}`);
+  console.log(`Server runnin on http://localhost:${PORT} god`)
   console.log('Checking database connection...');
   
   // Checking the connection at startup
