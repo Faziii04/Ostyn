@@ -6,7 +6,7 @@ const dbService = new DatabaseService();
 healthRouter.get("/", async (req, res) => {
     const dbConnected = await dbService.isConnected();
     res.json({
-        status: "OK",
-        database: dbConnected ? "Connected" : "Disconnected"
+        server_status: "OK",
+        db_status: dbConnected ? "Connected" : "Disconnected"
     });
 });
